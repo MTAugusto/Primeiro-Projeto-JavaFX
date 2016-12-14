@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresafxtotal.controller.FXMLCadastraProdutosController">
+    <children>
+      <Accordion prefHeight="321.0" prefWidth="600.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="293.0" prefWidth="600.0" text="Produtos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="598.0">
+                     <children>
+                        <TextField fx:id="textFieldProdutos" layoutX="37.0" layoutY="14.0" prefHeight="25.0" prefWidth="537.0" promptText="Nome do produto" />
+                        <TextField fx:id="textFieldEstoqueMinimo" layoutX="37.0" layoutY="52.0" prefHeight="25.0" prefWidth="537.0" promptText="Estoque Minimo" />
+                        <TextField fx:id="textFieldQtdEstoque" layoutX="37.0" layoutY="87.0" prefHeight="25.0" prefWidth="537.0" promptText="Quantidade em Estoque" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <ComboBox fx:id="comboBoxProdutos" layoutX="38.0" layoutY="322.0" prefHeight="25.0" prefWidth="478.0" promptText="Produtos" />
+      <Button layoutX="516.0" layoutY="322.0" mnemonicParsing="false" onAction="#load" text="Load" />
+      <Button layoutX="444.0" layoutY="362.0" mnemonicParsing="false" text="Cancelar" />
+      <Button layoutX="516.0" layoutY="362.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
+      <Button layoutX="385.0" layoutY="362.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+   </children>
+</AnchorPane>

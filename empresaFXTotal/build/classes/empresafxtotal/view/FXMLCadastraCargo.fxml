@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresafxtotal.controller.FXMLCadastraCargoController">
+   <children>
+      <Button layoutX="458.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Accordion prefHeight="280.0" prefWidth="600.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <panes>
+            <TitledPane animated="false" prefHeight="175.0" prefWidth="600.0" text="Cadastro de Cargos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="textFieldCargo" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="575.0" promptText="Cargo" />
+                        <TextField fx:id="textFieldFuncao" layoutX="14.0" layoutY="55.0" prefHeight="25.0" prefWidth="568.0" promptText="Função" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <Button layoutX="515.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="395.0" layoutY="345.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
+      <ComboBox fx:id="comboBoxCargos" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="523.0" promptText="Cargos" />
+      <Button layoutX="546.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" text="Load" />
+   </children>
+</AnchorPane>

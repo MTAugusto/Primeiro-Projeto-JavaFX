@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresafxtotal.controller.FXMLTelaPrincipalController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Cadastro">
+              <items>
+                <MenuItem onAction="#abraTelaMantemCliente" text="Clientes" />
+                  <MenuItem onAction="#abraTelaCadastraCargo" text="Cargos" />
+                  <MenuItem onAction="#abraTelaCadastraFuncionario" text="Funcionarios" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem onAction="#abraTelaCadastraProdutos" text="Produtos" />
+                  <MenuItem onAction="#abraTelaRealizaVenda" text="Vendas" />
+              </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorPaneTelas" prefHeight="376.0" prefWidth="600.0" />
+   </children>
+</VBox>
