@@ -15,48 +15,59 @@ import java.util.ArrayList;
  * @author mateus
  */
 public class Venda {
-   private int numero;
+
+    private int numero;
     private Date data;
     private Cliente cliente;
     private Funcionarios vendedor;
     private ArrayList<VendaItem> itens;
-    
+    private int numeromax;
+
     private int pkVenda;
 
     public Venda() {
     }
 
-    public Venda(int pkVenda ,int numero, Date data, Cliente cliente, Funcionarios vendedor ) {
+    public Venda(int numeromax) {
+        this.numeromax = numeromax;
+
+    }
+
+    public int getNumeromax() throws SQLException {
+        return numeromax + 1;
+    }
+
+    public void setNumeromax(int numeromax) {
+        this.numeromax = numeromax;
+    }
+
+    public Venda(int pkVenda, int numero, Date data, Cliente cliente, Funcionarios vendedor) {
         this.pkVenda = pkVenda;
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
         this.vendedor = vendedor;
-        
+
     }
-    
-    
 
     public Venda(int numero, Date data, Cliente cliente, Funcionarios vendedor) {
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
-        this.vendedor = vendedor;        
+        this.vendedor = vendedor;
     }
 
-    public Venda(int pkVenda , int numero, Date data, Cliente cliente, Funcionarios vendedor, ArrayList<VendaItem> itens ) {
+    public Venda(int pkVenda, int numero, Date data, Cliente cliente, Funcionarios vendedor, ArrayList<VendaItem> itens) {
         this.pkVenda = pkVenda;
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.itens = new ArrayList<>(itens);
-        
+
     }
 
-    
-    
-    public Venda(ArrayList<VendaItem> itens ,int numero, Date data, Cliente cliente, Funcionarios vendedor ) {
+    public Venda(ArrayList<VendaItem> itens, int numero, Date data, Cliente cliente, Funcionarios vendedor) {
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
@@ -72,9 +83,8 @@ public class Venda {
         this.pkVenda = pkVenda;
     }
 
-    
-    public void addItem(VendaItem vi){
-        if (itens ==null) {
+    public void addItem(VendaItem vi) {
+        if (itens == null) {
             itens = new ArrayList<>();
         }
         itens.add(vi);
@@ -84,9 +94,10 @@ public class Venda {
         return numero;
     }
 
-    public int getNumerodao() throws SQLException{
-        return VendasDAO.retreabynumero()+1;
+    public int getNumerodao() throws SQLException {
+        return VendasDAO.retreabynumero() + 1;
     }
+
     public Date getData() {
         return data;
     }
@@ -135,7 +146,5 @@ public class Venda {
     public String toString() {
         return "Venda{" + "numero=" + numero + ", data=" + data + ", cliente=" + cliente + ", vendedor=" + vendedor + ", itens=" + itens + ", pkVenda=" + pkVenda + '}';
     }
-    
-    
-    
+
 }

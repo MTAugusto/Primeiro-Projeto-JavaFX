@@ -136,7 +136,7 @@ public class ProdutoDAO {
             Statement stm
                     = BancoDados.createConnection().
                     createStatement();
-            String sql = "update  produtos set " + "nome='" + p.getNome() + "',estoque_minimo=" + p.getEstoque_minimo()
+            String sql = "update  produtos set " + "nome=" + p.getNome() + ",estoque_minimo=" + p.getEstoque_minimo()
                     + ",qtd_estoque" + p.getQtd_estoque() + "where=" + p.getPk_produto();
             
             stm.execute(sql);

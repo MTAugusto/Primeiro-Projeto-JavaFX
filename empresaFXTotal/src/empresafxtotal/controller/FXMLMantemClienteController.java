@@ -96,6 +96,7 @@ public class FXMLMantemClienteController implements Initializable {
         textFieldNome.clear();
         comboBoxEstado.getSelectionModel().clearSelection();
         comboPais.getSelectionModel().clearSelection();
+        comboBoxClientes.getSelectionModel().clearSelection();
     }
 
     public void salvar() throws SQLException {

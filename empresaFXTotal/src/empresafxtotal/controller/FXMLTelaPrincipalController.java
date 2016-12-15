@@ -60,7 +60,7 @@ public class FXMLTelaPrincipalController implements Initializable {
      
       public void abraTelaRealizaVenda() throws IOException{
         
-         AnchorPane v = FXMLLoader.load(getClass().getResource("/empresafxtotal/view/FXMLRealizaVenda.fxml"));
+         AnchorPane v = FXMLLoader.load(getClass().getResource("/empresafxtotal/view/FXMLVendas.fxml"));
          anchorPaneTelas.getChildren().setAll(v);
     }
     

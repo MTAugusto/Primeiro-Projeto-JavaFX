@@ -24,9 +24,9 @@ import javafx.scene.layout.AnchorPane;
  * @author mateus
  */
 public class FXMLCadastraProdutosController implements Initializable {
-    
-    private Produtos p;   
-    
+
+    private Produtos p;
+
     @FXML
     private AnchorPane anchorPane;
 
@@ -35,45 +35,50 @@ public class FXMLCadastraProdutosController implements Initializable {
 
     @FXML
     private TextField textFieldEstoqueMinimo;
-    
-     @FXML
+
+    @FXML
     private TextField textFieldQtdEstoque;
 
     @FXML
     private ComboBox<Produtos> comboBoxProdutos;
-    
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    List<Produtos> lp = ProdutoDAO.retreaveAll();
-    comboBoxProdutos.getItems().addAll(lp);       
-    }    
-    
-    public void load(){
+        List<Produtos> lp = ProdutoDAO.retreaveAll();
+        comboBoxProdutos.getItems().addAll(lp);
+    }
+
+    public void load() {
         p = comboBoxProdutos.getValue();
-        textFieldProdutos.setText(p.getNome());       
+        textFieldProdutos.setText(p.getNome());
         textFieldEstoqueMinimo.setText(String.valueOf(p.getEstoque_minimo()));
         textFieldQtdEstoque.setText(String.valueOf(p.getQtd_estoque()));
     }
-    
-    public void limpaTela(){
+
+    public void limpaTela() {
         textFieldProdutos.clear();
         textFieldEstoqueMinimo.clear();
         textFieldQtdEstoque.clear();
+        comboBoxProdutos.getSelectionModel().clearSelection();
     }
-    public void salvar() throws SQLException{
+
+    public void salvar() throws SQLException {
         boolean insert = false;
-        if(p == null){
-            p=new Produtos();
+        if (p == null) {
+            p = new Produtos();
             insert = true;
+        }else{
+            ProdutoDAO.update(p);
         }
         p.setNome(textFieldProdutos.getText());
         p.setQtd_estoque(Integer.parseInt(textFieldQtdEstoque.getText()));
         p.setEstoque_minimo(Integer.parseInt(textFieldEstoqueMinimo.getText()));
         ProdutoDAO.create(p);
+        limpaTela();
     }
-    
+
+  
 }
